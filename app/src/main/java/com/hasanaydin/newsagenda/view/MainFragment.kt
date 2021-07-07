@@ -1,11 +1,14 @@
-package com.hasanaydin.newsagenda
+package com.hasanaydin.newsagenda.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import androidx.lifecycle.ViewModelProvider
+import com.hasanaydin.newsagenda.adapter.RecyclerViewAdapter
+import com.hasanaydin.newsagenda.model.MainViewModel
 import com.hasanaydin.newsagenda.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -14,6 +17,8 @@ class MainFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: MainViewModel
+
+   lateinit var adapter : RecyclerViewAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +33,20 @@ class MainFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
+        viewModel.loadData()
+
         _binding = FragmentMainBinding.inflate(inflater,container,false)
         val view = binding.root
+
+        adapter = RecyclerViewAdapter(listOf())
+        binding.recyclerView.adapter = adapter
+
+        viewModel.liveData.observe(viewLifecycleOwner,{
+
+            adapter.dataList = it.articles
+            adapter.notifyDataSetChanged()
+
+        })
 
 
 

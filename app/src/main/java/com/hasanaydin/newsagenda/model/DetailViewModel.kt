@@ -1,4 +1,4 @@
-package com.hasanaydin.newsagenda
+package com.hasanaydin.newsagenda.model
 
 import androidx.lifecycle.ViewModel
 
