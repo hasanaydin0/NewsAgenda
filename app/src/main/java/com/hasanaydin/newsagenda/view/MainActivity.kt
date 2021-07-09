@@ -18,17 +18,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        mainFragment()
 
     }
 
-    private fun mainFragment ( ){
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        val mainFragment = MainFragment()
-        fragmentTransaction.add(R.id.frameLayout,mainFragment).commit()
-
-    }
 
 }

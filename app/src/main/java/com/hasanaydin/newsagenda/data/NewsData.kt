@@ -1,6 +1,7 @@
 package com.hasanaydin.newsagenda.data
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class NewsData (
 
@@ -8,4 +9,4 @@ data class NewsData (
     @SerializedName("totalResults") val totalResults : Int,
     @SerializedName("articles") val articles : List<ArticlesData>
 
-        )
+        ): Serializable
