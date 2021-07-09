@@ -26,7 +26,7 @@ class MainViewModel : ViewModel() {
 
         val apiService = retrofit.create(NewsAPIService::class.java)
 
-        val call : Call<NewsData> = apiService.getNews("d9c0b94025e44775aca56658f264e6a2","news","2021-06-27","publishedAt")
+        val call : Call<NewsData> = apiService.getNews("d9c0b94025e44775aca56658f264e6a2","news","2021-06-27","popularity")
 
         call.enqueue(object : Callback<NewsData> {
 

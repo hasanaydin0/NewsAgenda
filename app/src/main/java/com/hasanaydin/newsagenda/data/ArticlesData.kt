@@ -1,7 +1,6 @@
 package com.hasanaydin.newsagenda.data
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 data class ArticlesData(
 
@@ -14,4 +13,4 @@ data class ArticlesData(
     @SerializedName("publishedAt") val publishedAt : String,
     @SerializedName("content") val content : String
 
-): Serializable
+)

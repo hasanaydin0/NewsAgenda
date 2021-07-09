@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import com.hasanaydin.newsagenda.adapter.RecyclerViewAdapter
 import com.hasanaydin.newsagenda.model.MainViewModel
 import com.hasanaydin.newsagenda.databinding.FragmentMainBinding
@@ -53,11 +52,6 @@ class MainFragment : Fragment() {
 
         return view
 
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        adapter
     }
 
     override fun onDestroyView() {
